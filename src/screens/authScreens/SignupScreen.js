@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Context as AuthContext } from '../../context/AuthContext'
 import { NavigationEvents } from 'react-navigation'
-import NavLink from '../../components/NavLink'
+import NavLink from '../../components/navHelpers/NavLink'
 import { ScrollView } from 'react-navigation'
 import { Text, Input, Button, CheckBox } from 'react-native-elements'
 

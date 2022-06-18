@@ -54,12 +54,14 @@ const signup = dispatch => async ({email, password, checked}) => {
 const signin = dispatch => async ({email, password}) => {
         try {
             const response = await serverConnectApi.post('/auth/signin', {email, password})
+            console.log(email, password)
+            console.log(response.data)
             await AsyncStorage.setItem('token', response.data.token)
             await AsyncStorage.setItem('accountType', response.data.account_type)
             dispatch({type: 'signin', payload: response.data.token})
             navigate('Account')
         } catch (error) {
-            dispatch({type: 'add_error', payload: "In correct email or password."})
+            dispatch({type: 'add_error', payload: "Incorrect email or password."})
         }
     }
 

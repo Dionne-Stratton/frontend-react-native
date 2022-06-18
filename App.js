@@ -2,62 +2,17 @@ import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import SigninScreen from './src/screens/authScreens/SigninScreen';
-import SignupScreen from './src/screens/authScreens/SignupScreen';
-import NewbProfileDetailScreen from './src/screens/readOnlyDataScreens/NewbProfileDetailScreen';
-import NewbProfileListScreen from './src/screens/readOnlyDataScreens/NewbProfileListScreen';
 import {Provider as AuthProvider} from './src/context/AuthContext'
 import {Provider as DataProvider} from './src/context/DataContext'
 import { setNavigator } from './src/navigationRef';
 import ResolveAuthScreen from './src/screens/authScreens/ResolveAuthScreen';
-import {MaterialIcons, Ionicons, FontAwesome5} from '@expo/vector-icons'
-import CompanyListScreen from './src/screens/readOnlyDataScreens/CompanyListScreen';
-import CompanyDetailScreen from './src/screens/readOnlyDataScreens/CompanyDetailScreen';
-import JobListScreen from './src/screens/readOnlyDataScreens/JobListScreen';
-import JobDetailScreen from './src/screens/readOnlyDataScreens/JobDetailScreen';
-import MyDrawer from './src/components/MyDrawer';
-import ProfileCreateScreen from './src/screens/accountScreens/ProfileCreateScreen';
-import WelcomeScreen from './src/screens/authScreens/WelcomeScreen';
-
-const NewbProfileListFlow = createStackNavigator({
-  NewbProfileList: NewbProfileListScreen,
-  NewbProfileDetail: NewbProfileDetailScreen,
-})
-
-NewbProfileListFlow.navigationOptions = {
-  title: 'Newbs',
-    tabBarIcon: <Ionicons name="people-outline" size={20} />
-}
-
-const CompanyListFlow = createStackNavigator({
-  CompanyList: CompanyListScreen,
-  CompanyDetail: CompanyDetailScreen,
-})
-
-CompanyListFlow.navigationOptions = {
-  title: 'Companies',
-  tabBarIcon: <FontAwesome5 name="building" size={20} />
-}
-
-const JobListFlow = createStackNavigator({
-  JobList: JobListScreen,
-  JobDetail: JobDetailScreen
-})
-
-JobListFlow.navigationOptions = {
-  title: 'Jobs',
-    tabBarIcon: <MaterialIcons name="work-outline" size={20} />
-}
-
+import MyDrawer from './src/components/navHelpers/MyDrawer';
+import { NewbProfileListFlow, CompanyListFlow, JobListFlow } from './src/components/navHelpers/readOnlyTabs';
+import { loginFlow } from './src/components/navHelpers/authTab';
 
 const switchNavigator = createSwitchNavigator({
   resolveAuth: ResolveAuthScreen,
-  loginFlow: createStackNavigator ({
-    Signup: SignupScreen,
-    Signin: SigninScreen,
-    Welcome: WelcomeScreen,
-    Create: ProfileCreateScreen
-  }),
+  loginFlow,
   mainFlow: createBottomTabNavigator({
     Account: MyDrawer,
     JobListFlow,

@@ -1,13 +1,12 @@
-// import * as React from 'react';
 import React, {useContext} from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import {MaterialCommunityIcons} from '@expo/vector-icons'
-import ProfileScreen from '../screens/accountScreens/ProfileScreen';
-import AccountJobsScreen from '../screens/accountScreens/AccountJobsScreen';
-import JobCreateScreen from '../screens/accountScreens/JobCreateScreen';
-import SettingsScreen from '../screens/accountScreens/SettingsScreen';
-import { Context as DataContext } from '../context/DataContext'
+import ProfileScreen from '../../screens/accountScreens/ProfileScreen';
+import AccountJobsScreen from '../../screens/accountScreens/AccountJobsScreen';
+import JobCreateScreen from '../../screens/accountScreens/JobCreateScreen';
+import SettingsScreen from '../../screens/accountScreens/SettingsScreen';
+import { Context as DataContext } from '../../context/DataContext'
 import { NavigationEvents } from 'react-navigation'
 
 const Drawer = createDrawerNavigator();

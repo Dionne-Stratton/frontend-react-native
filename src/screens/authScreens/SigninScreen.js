@@ -2,13 +2,13 @@ import React, { useContext, useState } from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Context as AuthContext } from '../../context/AuthContext'
 import { NavigationEvents } from 'react-navigation'
-import NavLink from '../../components/NavLink'
+import NavLink from '../../components/navHelpers/NavLink'
 import { ScrollView } from 'react-navigation'
 import { Text, Input, Button } from 'react-native-elements'
 
 const SigninScreen = () => {
 
-    const {state, signup, clearErrorMessage} = useContext(AuthContext)
+    const {state, signin, clearErrorMessage} = useContext(AuthContext)
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -39,7 +39,7 @@ const SigninScreen = () => {
         <Text style={styles.errorMessage} >{state.errorMessage}</Text>
         <Button 
             title="Sign In"
-            onPress={() => signup({email, password})}
+            onPress={() => signin({email, password})}
         />
         <NavLink 
             touchText="Already have an account? Sign up instead."
