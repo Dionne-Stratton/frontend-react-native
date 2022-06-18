@@ -33,12 +33,13 @@ const clearErrorMessage = dispatch => () => {
 }
 
 const signup = dispatch => async ({email, password, checked}) => {
+
     if (checked === true) {
         account_type = "company"
     } else {
         account_type = "newb"
     }
-    console.log("accounttype", account_type)
+    
         try {
             const response = await serverConnectApi.post('/auth/signup', {email, password, account_type})
             await AsyncStorage.setItem('token', response.data.token)
@@ -46,13 +47,13 @@ const signup = dispatch => async ({email, password, checked}) => {
             dispatch({type: 'signin', payload: response.data.token})
             navigate('Welcome')
         } catch (error) {
-            dispatch({type: 'add_error', payload: "Sign up failed."})
+            dispatch({type: 'add_error', payload: "Sign up failed. Email might already be in use."})
         }
     }
 
-const signin = dispatch => async ({email, password, account_type}) => {
+const signin = dispatch => async ({email, password}) => {
         try {
-            const response = await serverConnectApi.post('/auth/signin', {email, password, account_type})
+            const response = await serverConnectApi.post('/auth/signin', {email, password})
             await AsyncStorage.setItem('token', response.data.token)
             await AsyncStorage.setItem('accountType', response.data.account_type)
             dispatch({type: 'signin', payload: response.data.token})

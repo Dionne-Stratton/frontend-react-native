@@ -4,7 +4,7 @@ import { Context as AuthContext } from '../../context/AuthContext'
 import { NavigationEvents } from 'react-navigation'
 import NavLink from '../../components/NavLink'
 import { ScrollView } from 'react-navigation'
-import { Text, Input, Button, CheckBox } from 'react-native-elements'
+import { Text, Input, Button } from 'react-native-elements'
 
 const SigninScreen = () => {
 
@@ -12,7 +12,6 @@ const SigninScreen = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [checked, setChecked] = useState(false)
 
     return (
         <View style={styles.container}>
@@ -36,17 +35,11 @@ const SigninScreen = () => {
             autoCorrect={false}
             // secureTextEntry
             />
-            {/* checkbox to be removed */}
-            <CheckBox 
-                title="Company"
-                checked={checked}
-                onPress={() => setChecked(!checked)}
-            />
 
         <Text style={styles.errorMessage} >{state.errorMessage}</Text>
         <Button 
             title="Sign In"
-            onPress={() => signup({email, password, checked})}
+            onPress={() => signup({email, password})}
         />
         <NavLink 
             touchText="Already have an account? Sign up instead."
