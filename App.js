@@ -4,17 +4,17 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import SigninScreen from './src/screens/authScreens/SigninScreen';
 import SignupScreen from './src/screens/authScreens/SignupScreen';
-import NewbProfileDetailScreen from './src/screens/NewbProfileDetailScreen';
-import NewbProfileListScreen from './src/screens/NewbProfileListScreen';
+import NewbProfileDetailScreen from './src/screens/readOnlyDataScreens/NewbProfileDetailScreen';
+import NewbProfileListScreen from './src/screens/readOnlyDataScreens/NewbProfileListScreen';
 import {Provider as AuthProvider} from './src/context/AuthContext'
 import {Provider as DataProvider} from './src/context/DataContext'
 import { setNavigator } from './src/navigationRef';
 import ResolveAuthScreen from './src/screens/authScreens/ResolveAuthScreen';
 import {MaterialIcons, Ionicons, FontAwesome5} from '@expo/vector-icons'
-import CompanyListScreen from './src/screens/CompanyListScreen';
-import CompanyDetailScreen from './src/screens/CompanyDetailScreen';
-import JobListScreen from './src/screens/JobListScreen';
-import JobDetailScreen from './src/screens/JobDetailScreen';
+import CompanyListScreen from './src/screens/readOnlyDataScreens/CompanyListScreen';
+import CompanyDetailScreen from './src/screens/readOnlyDataScreens/CompanyDetailScreen';
+import JobListScreen from './src/screens/readOnlyDataScreens/JobListScreen';
+import JobDetailScreen from './src/screens/readOnlyDataScreens/JobDetailScreen';
 import MyDrawer from './src/components/MyDrawer';
 import ProfileCreateScreen from './src/screens/accountScreens/ProfileCreateScreen';
 import WelcomeScreen from './src/screens/authScreens/WelcomeScreen';

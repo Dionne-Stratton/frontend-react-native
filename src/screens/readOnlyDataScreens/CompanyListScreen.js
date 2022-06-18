@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react'
 import { SafeAreaView, StyleSheet, FlatList, TouchableOpacity, Text} from 'react-native'
 import { NavigationEvents } from 'react-navigation'
-import { Context as DataContext } from '../context/DataContext'
+import { Context as DataContext } from '../../context/DataContext'
 import { ListItem } from 'react-native-elements'
 import { Searchbar } from 'react-native-paper';
 

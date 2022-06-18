@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { StyleSheet, Text } from 'react-native'
-import { Context as DataContext } from '../context/DataContext'
+import { Context as DataContext } from '../../context/DataContext'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 const NewbProfileDetailScreen = ({navigation}) => {
