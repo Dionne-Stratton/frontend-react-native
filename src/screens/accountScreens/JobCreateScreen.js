@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { StyleSheet, View } from 'react-native'
-import JobListingForm from '../../components/JobListingForm'
+import JobListingForm from '../../components/forms/JobListingForm'
 import { Context as DataContext } from '../../context/DataContext'
 
 const JobCreateScreen = () => {
