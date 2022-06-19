@@ -12,6 +12,7 @@ const AccountJobsScreen = () => {
     const {state} = useContext(DataContext)
 
     useEffect(() => {
+
   }, [state.jobListings])
 
     return (
@@ -27,7 +28,6 @@ const AccountJobsScreen = () => {
             theme={{ colors: { primary: '#2e9103' }}}
             title={item.title}>
             <View style={styles.listing} >
-            {/* <List.Icon color={Colors.green600} icon="eye" /> */}
             <JobListingView id={item._id} />
             <JobListingEdit id={item._id} />
             <JobListingDelete id={item._id} />

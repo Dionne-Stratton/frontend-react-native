@@ -21,7 +21,7 @@ const JobListingEdit= (props) => {
       apply_link: job.apply_link,
       required_skills: job.required_skills,
       preferred_skills: job.preferred_skills
-  }
+    }
 
     const [form, setForm] = useState(initialFormValues)
     const [modalVisible, setModalVisible] = useState(false);
@@ -41,57 +41,57 @@ const JobListingEdit= (props) => {
           <View style={styles.modalView}>
             <Text style={styles.modalText}>Edit Job Listing</Text>
             <Input 
-            label="Job Title" 
-            value={form.title} 
-            onChangeText={text => setForm({...form, title: text})}
+              label="Job Title" 
+              value={form.title} 
+              onChangeText={text => setForm({...form, title: text})}
             />
             <Input 
-            label="Company" 
-            value={form.company} 
-            onChangeText={text => setForm({...form, company: text})}
-            autoCorrect={false}
-            />
-        <Input 
-            label="Description" 
-            value={form.description} 
-            onChangeText={text => setForm({...form, description: text})}
-            autoCorrect={false}
+              label="Company" 
+              value={form.company} 
+              onChangeText={text => setForm({...form, company: text})}
+              autoCorrect={false}
             />
             <Input 
-            label="Compensation" 
-            value={form.compensation} 
-            onChangeText={text => setForm({...form, compensation: text})}
-            autoCorrect={false}
+                label="Description" 
+                value={form.description} 
+                onChangeText={text => setForm({...form, description: text})}
+                autoCorrect={false}
             />
             <Input 
-            label="Job Type" 
-            value={form.job_type} 
-            onChangeText={text => setForm({...form, job_type: text})}
+              label="Compensation" 
+              value={form.compensation} 
+              onChangeText={text => setForm({...form, compensation: text})}
+              autoCorrect={false}
             />
             <Input 
-            label="Location" 
-            value={form.location} 
-            onChangeText={text => setForm({...form, location: text})}
-            autoCorrect={false}
+              label="Job Type" 
+              value={form.job_type} 
+              onChangeText={text => setForm({...form, job_type: text})}
             />
             <Input 
-            label="Apply Link" 
-            value={form.apply_link} 
-            onChangeText={text => setForm({...form, apply_link: text})}
-            autoCapitalize="none"
-            autoCorrect={false}
+              label="Location" 
+              value={form.location} 
+              onChangeText={text => setForm({...form, location: text})}
+              autoCorrect={false}
             />
             <Input 
-            label="Required Skills" 
-            value={form.required_skills} 
-            onChangeText={text => setForm({...form, required_skills: text})} 
-            autoCapitalize="none"
+              label="Apply Link" 
+              value={form.apply_link} 
+              onChangeText={text => setForm({...form, apply_link: text})}
+              autoCapitalize="none"
+              autoCorrect={false}
             />
             <Input 
-            label="Preferred Skills" 
-            value={form.preferred_skills} 
-            onChangeText={text => setForm({...form, preferred_skills: text})} 
-            autoCapitalize="none"
+              label="Required Skills" 
+              value={form.required_skills} 
+              onChangeText={text => setForm({...form, required_skills: text})} 
+              autoCapitalize="none"
+            />
+            <Input 
+              label="Preferred Skills" 
+              value={form.preferred_skills} 
+              onChangeText={text => setForm({...form, preferred_skills: text})} 
+              autoCapitalize="none"
             />
             <View style={styles.flexRow} >
             <Pressable
