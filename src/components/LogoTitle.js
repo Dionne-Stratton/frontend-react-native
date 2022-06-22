@@ -22,7 +22,7 @@ function LogoTitle() {
     text: {
       fontSize: 30,
       fontWeight: 'bold',
-      color: '#5ea303'
+      color: '#5ea303',
     },
     header: {
       display: 'flex',

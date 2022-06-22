@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react'
-import { View, StyleSheet } from 'react-native'
+import { Pressable, StyleSheet } from 'react-native'
 import { Context as AuthContext } from '../../context/AuthContext'
 import { NavigationEvents } from 'react-navigation'
 import NavLink from '../../components/navHelpers/NavLink'
 import { ScrollView } from 'react-navigation'
 import { Text, Input, Button, CheckBox } from 'react-native-elements'
 import LogoTitle from '../../components/LogoTitle'
+import { SafeAreaView } from 'react-navigation'
 
 const SignupScreen = () => {
 
@@ -16,7 +17,7 @@ const SignupScreen = () => {
     const [checked, setChecked] = useState(false)
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <NavigationEvents 
                 onWillFocus={clearErrorMessage}
             />
@@ -44,16 +45,22 @@ const SignupScreen = () => {
             />
 
         <Text style={styles.errorMessage} >{state.errorMessage}</Text>
-        <Button 
+        {/* <Button 
             title="Sign Up"
             onPress={() => signup({email, password, checked})}
-        />
+        /> */}
+        <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => signup({email, password, checked})}
+              >
+              <Text style={styles.textStyle}>~*~  Sign Up  ~*~</Text>
+        </Pressable>
         <NavLink 
             touchText="Already have an account? Sign in instead."
             linkTo='Signin'        
         />
         </ScrollView>
-        </View>
+        </SafeAreaView>
         )
 }
 
@@ -61,9 +68,8 @@ SignupScreen.navigationOptions = () => {
     return {
     //   headerShown: false,
       headerStyle: {
-        backgroundColor: '#f8faca',
+        backgroundColor: '#f7e57e',
       },
-      headerTintColor: '#5ea303',
       headerTitleStyle: {
         fontWeight: 'bold',
       },
@@ -79,7 +85,22 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         marginTop: 50
-    }
+    },
+    button: {
+        borderRadius: 20,
+        padding: 10,
+        margin: 5,
+        paddingHorizontal: 10
+    },
+      buttonClose: {
+        backgroundColor: "green",
+    },
+    textStyle: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center",
+        fontSize: 16
+      },
 })
 
 export default SignupScreen

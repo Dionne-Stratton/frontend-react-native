@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Pressable } from 'react-native'
 import { Context as AuthContext } from '../../context/AuthContext'
 import { NavigationEvents } from 'react-navigation'
 import NavLink from '../../components/navHelpers/NavLink'
@@ -38,10 +38,16 @@ const SigninScreen = () => {
             />
 
         <Text style={styles.errorMessage} >{state.errorMessage}</Text>
-        <Button 
+        {/* <Button 
             title="Sign In"
             onPress={() => signin({email, password})}
-        />
+        /> */}
+        <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => signin({email, password, checked})}
+              >
+              <Text style={styles.textStyle}>~*~  Sign In  ~*~</Text>
+        </Pressable>
         <NavLink 
             touchText="Already have an account? Sign up instead."
             linkTo='Signup'        
@@ -55,9 +61,8 @@ SigninScreen.navigationOptions = () => {
     return {
     //   headerShown: false,
       headerStyle: {
-        backgroundColor: '#f8faca',
+        backgroundColor: '#f7e57e',
       },
-      headerTintColor: '#5ea303',
       headerTitleStyle: {
         fontWeight: 'bold',
       },
@@ -73,7 +78,22 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         marginTop: 50
-    }
+    },
+    button: {
+        borderRadius: 20,
+        padding: 10,
+        margin: 5,
+        paddingHorizontal: 10
+    },
+      buttonClose: {
+        backgroundColor: "green",
+    },
+    textStyle: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center",
+        fontSize: 16
+      },
 })
 
 export default SigninScreen
