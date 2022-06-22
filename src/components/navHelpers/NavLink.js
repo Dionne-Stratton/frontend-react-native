@@ -12,7 +12,7 @@ const NavLink = ({navigation, touchText, linkTo}) => {
 
 const styles = StyleSheet.create({
     link: {
-        color: 'blue',
+        color: 'green',
         marginTop: 30,
         fontSize: 16
     }

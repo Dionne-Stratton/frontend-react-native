@@ -5,6 +5,7 @@ import { NavigationEvents } from 'react-navigation'
 import NavLink from '../../components/navHelpers/NavLink'
 import { ScrollView } from 'react-navigation'
 import { Text, Input, Button } from 'react-native-elements'
+import LogoTitle from '../../components/LogoTitle'
 
 const SigninScreen = () => {
 
@@ -52,7 +53,17 @@ const SigninScreen = () => {
 
 SigninScreen.navigationOptions = () => {
     return {
-      headerShown: false,
+    //   headerShown: false,
+      headerStyle: {
+        backgroundColor: '#f8faca',
+      },
+      headerTintColor: '#5ea303',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+      headerBackVisible:false,
+      headerTitle: (props) => <LogoTitle {...props} />,
+      headerLeft: ()=> null,
     };
 };
 
@@ -61,7 +72,7 @@ const styles = StyleSheet.create({
         margin: 15,
         flex: 1,
         justifyContent: 'center',
-        marginTop: 70
+        marginTop: 50
     }
 })
 
